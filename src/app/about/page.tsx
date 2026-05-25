@@ -3,7 +3,7 @@ export default function About() {
     <div className="container py-20">
       <h1 className="text-4xl font-bold">About Me</h1>
 
-      <p className="mt-6 text-gray-400 max-w-2xl">
+      <p className="mt-6 text-gray- 400 max-w-2xl">
         I'm a third-year student passionate about building scalable and modern web applications using React, Next.js, and TypeScript.
       </p>
 
