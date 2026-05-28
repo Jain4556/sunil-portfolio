@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import About from "./About";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
@@ -72,108 +73,53 @@ export default function Hero() {
   return (
     <section className="relative overflow-hidden py-20 sm:py-24 lg:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-12 lg:grid-cols-[auto_1fr] lg:gap-16">
+        <div className="grid items-start gap-12 lg:grid-cols-[260px_1fr] lg:gap-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="flex justify-center lg:justify-start"
+            className="flex flex-col items-start"
           >
-            <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
-              <div className="group relative h-48 w-48 sm:h-56 sm:w-56 lg:h-60 lg:w-60">
-                <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_180deg,rgba(255,255,255,0.35),rgba(59,130,246,0.95),rgba(255,255,255,0.35),rgba(16,185,129,0.95),rgba(255,255,255,0.35))] opacity-0 blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-hover:animate-[spin_6s_linear_infinite] dark:bg-[conic-gradient(from_180deg,rgba(255,255,255,0.18),rgba(96,165,250,0.95),rgba(255,255,255,0.18),rgba(45,212,191,0.95),rgba(255,255,255,0.18))]" />
-                <div className="absolute inset-1 overflow-hidden rounded-full border-4 border-white/80 bg-zinc-200 shadow-[0_18px_45px_-30px_rgba(0,0,0,0.55)] ring-1 ring-black/5 dark:border-white/10 dark:bg-zinc-800">
-                  <Image
-                    src="/profile.png"
-                    alt="Sunil Jain"
-                    fill
-                    className="object-cover"
-                    priority
-                  />
+            <div className="group relative h-48 w-48 sm:h-56 sm:w-56 lg:h-60 lg:w-60">
+              <div className="absolute inset-0 rounded-full bg-[conic-gradient(from_180deg,rgba(255,255,255,0.35),rgba(59,130,246,0.95),rgba(255,255,255,0.35),rgba(16,185,129,0.95),rgba(255,255,255,0.35))] opacity-0 blur-[2px] transition-opacity duration-300 group-hover:opacity-100 group-hover:animate-[spin_6s_linear_infinite] dark:bg-[conic-gradient(from_180deg,rgba(255,255,255,0.18),rgba(96,165,250,0.95),rgba(255,255,255,0.18),rgba(45,212,191,0.95),rgba(255,255,255,0.18))]" />
+              <div className="absolute inset-1 overflow-hidden rounded-full border-4 border-white/80 bg-zinc-200 shadow-[0_18px_45px_-30px_rgba(0,0,0,0.55)] ring-1 ring-black/5 dark:border-white/10 dark:bg-zinc-800">
+                <Image src="/profile.png" alt="Sunil Jain" fill className="object-cover" priority />
+              </div>
+            </div>
+
+            <div className="mt-6 w-full">
+              <div className="mb-4">
+                <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">Find me on</p>
+                <div className="mt-2 flex gap-3">
+                  <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
+                    <FaLinkedin size={16} />
+                  </a>
+                  <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
+                    <FaGithub size={16} />
+                  </a>
+                  <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#5865F2]">
+                    <SiDiscord size={16} />
+                  </a>
                 </div>
               </div>
 
-              <div className="mt-4 flex flex-col items-center gap-3 lg:items-start lg:text-left">
-                <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">Find me on</p>
-
-                <div className="mt-1 flex gap-3">
-                  <a
-                    href="https://www.linkedin.com/in/your-profile"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-zinc-900 text-white transition hover:scale-105 hover:bg-white hover:text-[#0A66C2] dark:bg-white/10 dark:text-white"
-                  >
-                    <FaLinkedin size={18} />
-                  </a>
-
-                  <a
-                    href="https://github.com/your-username"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-zinc-900 text-white transition hover:scale-105 hover:bg-white hover:text-[#181717] dark:bg-white/10 dark:text-white"
-                  >
-                    <FaGithub size={18} />
-                  </a>
-
-                  <a
-                    href="https://discord.com/users/your-id"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="Discord"
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-zinc-900 text-white transition hover:scale-105 hover:bg-white hover:text-[#5865F2] dark:bg-white/10 dark:text-white"
-                  >
-                    <SiDiscord size={18} />
-                  </a>
-                </div>
+              <div className="pt-4 border-t border-white/5">
+                <About className="pt-4" />
               </div>
             </div>
           </motion.div>
 
-          <div className="mx-auto w-full max-w-3xl text-center lg:mx-0 lg:max-w-none lg:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl"
-            >
-              Hi, I&apos;m{" "}
-              <span className="bg-linear-to-r from-amber-500 to-cyan-600 bg-clip-text text-transparent">
-                Sunil Jain
-              </span>
+          <div className="w-full">
+            <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
+              Hi, I&apos;m <span className="bg-linear-to-r from-amber-500 to-cyan-600 bg-clip-text text-transparent">Sunil Jain</span>
             </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25 }}
-              className="mt-6 flex flex-col items-center gap-3 text-center lg:items-start lg:text-left"
-            >
-              <Typewriter
-                phrases={["Full Stack Developer", "React & Next.js", "TypeScript Enthusiast"]}
-              />
+            <p className="mt-4 max-w-2xl text-lg text-zinc-300">I'm a third-year student passionate about building scalable and modern web applications using React, Next.js, and TypeScript.</p>
 
-              <div className="mt-2 inline-flex items-center rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-600">
+            <div className="mt-6">
+              <span className="inline-flex items-center rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-600">
                 Open to Work
-              </div>
-            </motion.div>
-
-      
-
-            {/* <div className="mt-8 flex flex-wrap justify-center gap-4 lg:justify-start">
-              <Link
-                href="/projects"
-                className="rounded-full bg-zinc-950 px-6 py-3 font-medium text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
-              >
-                View Projects
-              </Link>
-
-              <Link
-                href="/contact"
-                className="rounded-full border border-zinc-300 px-6 py-3 font-medium text-zinc-900 transition hover:-translate-y-0.5 hover:border-zinc-950 hover:bg-zinc-950 hover:text-white dark:border-white/15 dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-zinc-950"
-              >
-                Contact Me
-              </Link>
-            </div> */}
+              </span>
+            </div>
           </div>
         </div>
 
