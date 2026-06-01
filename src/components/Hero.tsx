@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
@@ -9,10 +8,16 @@ import TechStack from "./TechStack";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
+const heroPhrases = [
+  "Full Stack Developer",
+  "Code. Create. Innovate.",
+  "Problem Solver",
+];
+
 function Typewriter({
   phrases,
-  typingSpeed = 80,
-  deletingSpeed = 40,
+  typingSpeed = 1000,
+  deletingSpeed = 20,
   pause = 1000,
 }: {
   phrases: string[];
@@ -59,11 +64,11 @@ function Typewriter({
   }, []);
 
   return (
-    <span className="inline-block text-base sm:text-lg font-medium text-zinc-800 dark:text-zinc-100">
+    <span className="inline-flex items-center whitespace-nowrap text-base font-medium tracking-wide sm:text-lg">
       {phrases[index].slice(0, subIndex)}
       <span
         aria-hidden
-        className="inline-block align-middle h-5 w-0.5 bg-zinc-900 dark:bg-white ml-1"
+        className="ml-1 inline-block h-5 w-0.5 rounded-full bg-zinc-900 dark:bg-zinc-100"
         style={{ opacity: blink ? 1 : 0 }}
       />
     </span>
@@ -89,7 +94,11 @@ export default function Hero() {
                   Hi, I&apos;m <span className="bg-linear-to-r from-amber-500 to-cyan-600 bg-clip-text text-transparent">Sunil Jain</span>
                 </motion.h1>
 
-                <p className="mt-3 text-base sm:text-lg text-zinc-300">I'm a third-year student passionate about building scalable and modern web applications using React, Next.js, and TypeScript.</p>
+                <div className="mt-1.5 flex h-7 items-center justify-start overflow-hidden sm:h-8">
+                  <span className="bg-linear-to-r from-zinc-700 via-zinc-900 to-zinc-700 bg-clip-text text-transparent dark:from-zinc-200 dark:via-white dark:to-zinc-300">
+                    <Typewriter phrases={heroPhrases} typingSpeed={75} deletingSpeed={45} pause={1400} />
+                  </span>
+                </div>
 
                 <div className="mt-4">
                   <span className="inline-flex items-center rounded-full bg-amber-500/10 px-3 py-1 text-sm font-semibold text-amber-600">
@@ -104,10 +113,10 @@ export default function Hero() {
                 <div className="mb-4">
                   <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">Find me on</p>
                   <div className="mt-2 flex gap-3">
-                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
-                      <FaLinkedin size={16} />
+                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
+                      <FaLinkedin size={16} />  
                     </a>
-                    <a href="https://github.com/your-username" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
+                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
                       <FaGithub size={16} />
                     </a>
                     <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#5865F2]">
