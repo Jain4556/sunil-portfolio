@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import About from "./About";
+import TechStack from "./TechStack";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
@@ -117,6 +118,10 @@ export default function Hero() {
 
                 <div className="pt-4 border-t border-white/5">
                   <About className="pt-4" />
+                </div>
+
+                <div className="pt-14">
+                  <TechStack />
                 </div>
               </div>
 

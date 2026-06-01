@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion";
 import {
+  SiHtml5,
+  SiCss,
+  SiPython,
+  SiLinux,
   SiTypescript,
   SiJavascript,
   SiReact,
@@ -15,8 +19,14 @@ import {
   SiGithub,
   SiVercel,
 } from "react-icons/si";
+import { DiVisualstudio } from "react-icons/di";
 
 const tech = [
+  { name: "HTML", icon: <SiHtml5 /> },
+  { name: "CSS", icon: <SiCss /> },
+  { name: "Python", icon: <SiPython /> },
+  { name: "Linux", icon: <SiLinux /> },
+  { name: "VS Code", icon: <DiVisualstudio /> },
   { name: "React", icon: <SiReact /> },
   { name: "Next.js", icon: <SiNextdotjs /> },
   { name: "TypeScript", icon: <SiTypescript /> },
