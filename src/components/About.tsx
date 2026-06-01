@@ -12,9 +12,9 @@ const aboutItems = [
   "Currently growing my portfolio, sharpening backend skills, and open to internships, collaborations, freelance work, and meaningful technical opportunities.",
 ];
 
-export default function About() {
+export default function About({ className = "" }: { className?: string }) {
   return (
-    <section className="w-full">
+    <section className={`w-full ${className}`}>
       <h2 className="text-3xl font-bold text-zinc-100">
         About
       </h2>
