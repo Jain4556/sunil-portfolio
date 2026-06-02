@@ -1,10 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import About from "./About";
 import TechStack from "./TechStack";
+import ProjectCard from "./ProjectCard";
+import { projects } from "@/data/projects";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
@@ -132,6 +135,41 @@ export default function Hero() {
                 <div className="pt-14">
                   <TechStack />
                 </div>
+
+                <motion.section
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                  className="mt-10 border-t border-white/5 pt-14"
+                >
+                  <div className="flex items-end justify-between gap-4">
+                    <div>
+                     
+                      <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
+                        Projects
+                      </h2>
+                    </div>
+
+                    <Link href="/projects" className="text-sm text-zinc-500 transition hover:text-zinc-900 dark:hover:text-white">
+                      View all
+                    </Link>
+                  </div>
+
+                  <div className="mt-8 grid gap-6 md:grid-cols-2">
+                    {projects.slice(0, 4).map((project, index) => (
+                      <motion.div
+                        key={project.slug}
+                        initial={{ opacity: 0, y: 18 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ delay: index * 0.08, duration: 0.4 }}
+                      >
+                        <ProjectCard project={project} />
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.section>
               </div>
 
               <div />
