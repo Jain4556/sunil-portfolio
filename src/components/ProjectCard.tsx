@@ -3,47 +3,110 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
+import { AiFillGithub } from "react-icons/ai";
 import ProjectThumbnail from "./ProjectThumbnail";
 
 const MotionLink = motion(Link);
 
+function getProjectHref(project: any) {
+  return project.link || `/projects/${project.slug}`;
+}
+
 export default function ProjectCard({ project }: any) {
+  const href = getProjectHref(project);
+  const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
+
+  const renderThumbnail = () => {
+    if (project.image) {
+      return (
+        <img
+          src={project.image}
+          alt={project.title}
+          className="h-10 w-10 rounded-md object-cover sm:h-12 sm:w-14"
+        />
+      );
+    }
+
+    if (typeof href === "string" && /github.com/.test(href)) {
+      return (
+        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-white/5 sm:h-12 sm:w-14">
+          <AiFillGithub className="text-lg text-white/80 sm:text-xl" />
+        </div>
+      );
+    }
+
+    return <ProjectThumbnail project={project} compact />;
+  };
+
   return (
-    <MotionLink
-      href={`/projects/${project.slug}`}
-      whileHover={{ y: -8, scale: 1.01 }}
-      transition={{ type: "spring", stiffness: 260, damping: 22 }}
-      className="group block h-full rounded-2xl border border-gray-800 bg-black/20 p-4 transition-colors duration-300 hover:border-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/60 sm:p-5"
-    >
-      <ProjectThumbnail project={project} compact />
+    <>
+      {isExternal ? (
+        <motion.a
+          href={href}
+          target="_blank"
+          rel="noreferrer"
+          whileHover={{ y: -3, scale: 1.005 }}
+          transition={{ type: "spring", stiffness: 260, damping: 22 }}
+          className="group block h-full rounded-lg border border-gray-800 bg-black/10 p-2.5 transition-colors duration-200 hover:border-white/60 focus-visible:outline-none sm:p-3"
+        >
+          <div className="grid grid-cols-[auto,minmax(0,1fr),auto] items-start gap-2.5 sm:gap-3">
+            <div className="shrink-0">{renderThumbnail()}</div>
 
-      <div className="mt-5 flex items-start justify-between gap-4">
-        <h2 className="text-xl font-semibold">{project.title}</h2>
+            <div className="min-w-0">
+              <h2 className="truncate text-xs font-semibold leading-tight text-white sm:text-sm">
+                {project.title}
+              </h2>
 
-        <span className="flex h-9 w-9 items-center justify-center rounded-full border border-gray-700 text-gray-300 transition duration-300 group-hover:-rotate-45 group-hover:border-white group-hover:text-white">
-          <FiArrowUpRight className="text-lg" />
-        </span>
-      </div>
+              <div className="mt-1.5 flex flex-wrap gap-1.5 sm:mt-2">
+                {project.tech.map((t: string, i: number) => (
+                  <span
+                    key={i}
+                    className="rounded-md border border-gray-700 px-1.5 py-0.5 text-[10px] text-gray-300 sm:px-2 sm:text-[11px]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-      <p className="mt-3 text-sm leading-6 text-gray-400 transition duration-300 group-hover:text-gray-200">
-        {project.description}
-      </p>
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-700 text-gray-300 transition duration-200 group-hover:-rotate-45 group-hover:border-white group-hover:text-white sm:h-8 sm:w-8">
+              <FiArrowUpRight className="text-xs sm:text-sm" />
+            </span>
+          </div>
+        </motion.a>
+      ) : (
+        <MotionLink
+          href={href}
+          whileHover={{ y: -3, scale: 1.005 }}
+          transition={{ type: "spring", stiffness: 260, damping: 22 }}
+          className="group block h-full rounded-lg border border-gray-800 bg-black/10 p-2.5 transition-colors duration-200 hover:border-white/60 focus-visible:outline-none sm:p-3"
+        >
+          <div className="grid grid-cols-[auto,minmax(0,1fr),auto] items-start gap-2.5 sm:gap-3">
+            <div className="shrink-0">{renderThumbnail()}</div>
 
-      <div className="mt-5 flex flex-wrap gap-2">
-        {project.tech.map((t: string, i: number) => (
-          <span
-            key={i}
-            className="rounded-md border border-gray-700 px-2.5 py-1 text-[11px] text-gray-300 transition duration-300 group-hover:border-gray-500"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
+            <div className="min-w-0">
+              <h2 className="truncate text-xs font-semibold leading-tight text-white sm:text-sm">
+                {project.title}
+              </h2>
 
-      <div className="mt-6 flex items-center gap-2 text-sm text-gray-300 transition duration-300 group-hover:text-white">
-        <span>Open project</span>
-        <FiArrowUpRight className="transition duration-300 group-hover:-rotate-45" />
-      </div>
-    </MotionLink>
+              <div className="mt-1.5 flex flex-wrap gap-1.5 sm:mt-2">
+                {project.tech.map((t: string, i: number) => (
+                  <span
+                    key={i}
+                    className="rounded-md border border-gray-700 px-1.5 py-0.5 text-[10px] text-gray-300 sm:px-2 sm:text-[11px]"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <span className="flex h-7 w-7 items-center justify-center rounded-full border border-gray-700 text-gray-300 transition duration-200 group-hover:-rotate-45 group-hover:border-white group-hover:text-white sm:h-8 sm:w-8">
+              <FiArrowUpRight className="text-xs sm:text-sm" />
+            </span>
+          </div>
+        </MotionLink>
+      )}
+    </>
   );
 }
