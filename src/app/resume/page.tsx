@@ -28,14 +28,14 @@ export default function Resume() {
         </a>
       </div>
 
-      <section className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-4xl border border-black/10 bg-white/70 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.55)] backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+      <section className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-4xl border border-white/10 bg-white/5 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.55)] backdrop-blur-xl">
         <div className="border-b border-black/10 px-5 py-4 dark:border-white/10 sm:px-6">
           <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
             Resume preview
           </p>
         </div>
 
-        <div className="h-[80vh] bg-zinc-100 dark:bg-zinc-900">
+        <div className="h-[80vh] bg-black/15">
           <iframe
             src="/suniljain.pdf"
             title="Resume PDF"

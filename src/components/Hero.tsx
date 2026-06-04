@@ -156,7 +156,7 @@ export default function Hero() {
                     </Link>
                   </div>
 
-                  <div className="mt-8 grid gap-6 md:grid-cols-2">
+                  <div className="mt-8 grid gap-4 md:grid-cols-2">
                     {projects.slice(0, 4).map((project, index) => (
                       <motion.div
                         key={project.slug}
@@ -165,7 +165,7 @@ export default function Hero() {
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ delay: index * 0.08, duration: 0.4 }}
                       >
-                        <ProjectCard project={project} />
+                        <ProjectCard project={project} compact />
                       </motion.div>
                     ))}
                   </div>
