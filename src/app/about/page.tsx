@@ -4,7 +4,7 @@ export default function AboutPage() {
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-4xl border border-white/10 bg-zinc-950/80 px-5 py-6 shadow-[0_24px_80px_-36px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:px-8 sm:py-8 lg:px-10 lg:py-10">
+        <div className="rounded-4xl border border-white/10 bg-white/5 px-5 py-6 shadow-[0_24px_80px_-36px_rgba(0,0,0,0.8)] backdrop-blur-xl sm:px-8 sm:py-8 lg:px-10 lg:py-10">
           <div className="max-w-3xl">
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-400/80 sm:text-sm">
               About Me

@@ -31,10 +31,7 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body
-        className="min-h-full transition-colors duration-300"
-        style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
-      >
+      <body className="min-h-full transition-colors duration-300">
         <ThemeProvider>
           <Navbar />
           <div className="pt-32">{children}</div>

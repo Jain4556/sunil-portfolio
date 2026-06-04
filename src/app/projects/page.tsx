@@ -9,9 +9,9 @@ export default function Projects() {
         A selected set of projects with compact cards, hover motion, and a clear click target.
       </p>
 
-      <div className="mt-10 grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+      <div className="mt-10 grid gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
         {projects.map((p, i) => (
-          <ProjectCard key={i} project={p} />
+          <ProjectCard key={i} project={p} compact />
         ))}
       </div>
     </div>
