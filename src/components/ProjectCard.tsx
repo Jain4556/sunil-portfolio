@@ -3,8 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FiArrowUpRight } from "react-icons/fi";
-import { AiFillGithub } from "react-icons/ai";
-import ProjectThumbnail from "./ProjectThumbnail";
 
 const MotionLink = motion(Link);
 
@@ -20,74 +18,56 @@ type ProjectCardProps = {
 export default function ProjectCard({ project, compact = false }: ProjectCardProps) {
   const href = getProjectHref(project);
   const isExternal = typeof href === "string" && /^https?:\/\//.test(href);
-  const cardMinHeight = compact ? "min-h-[96px] sm:min-h-[108px]" : "min-h-[112px] sm:min-h-[124px]";
-  const cardPadding = compact ? "p-2 sm:p-2.5" : "p-2.5 sm:p-3";
-  const cardGap = compact ? "gap-2 sm:gap-2.5" : "gap-2.5 sm:gap-3";
-  const titleSize = compact ? "text-[11px] sm:text-xs" : "text-xs sm:text-sm";
-  const tagSize = compact ? "px-1.5 py-0.5 text-[9px] sm:text-[10px]" : "px-1.5 py-0.5 text-[10px] sm:px-2 sm:text-[11px]";
-  const iconSize = compact ? "h-6 w-6 sm:h-7 sm:w-7" : "h-7 w-7 sm:h-8 sm:w-8";
-  const thumbnailClassName = compact
-    ? "h-9 w-9 rounded-md object-cover sm:h-10 sm:w-12"
-    : "h-10 w-10 rounded-md object-cover sm:h-12 sm:w-14";
-  const hoverMotion = { y: -4, scale: 1.01 };
-  const hoverTransition = { type: "spring" as const, stiffness: 260, damping: 24 };
+  const hoverMotion = { y: -3 };
+  const hoverTransition = { type: "spring" as const, stiffness: 320, damping: 28 };
 
-  const renderThumbnail = () => {
-    if (project.image) {
-      return (
-        <img
-          src={project.image}
-          alt={project.title}
-          className={thumbnailClassName}
-        />
-      );
-    }
-
-    if (typeof href === "string" && /github.com/.test(href)) {
-      return (
-        <div className={`flex ${thumbnailClassName} items-center justify-center bg-white/5`}>
-          <AiFillGithub className="text-base text-white/80 sm:text-lg" />
-        </div>
-      );
-    }
-
-    return <ProjectThumbnail project={project} compact={compact} />;
-  };
+  const accentLabel = project.slug
+    .split("-")
+    .slice(0, 2)
+    .map((part: string) => part[0]?.toUpperCase())
+    .join("");
 
   const cardClassName = [
-    "group block h-full rounded-lg border border-gray-800 bg-black/10 transition duration-200 hover:border-white/60 hover:bg-black/20 focus-visible:outline-none",
-    cardMinHeight,
-    cardPadding,
+    "group block h-full rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.45)] backdrop-blur-sm transition duration-200 hover:border-white/20 hover:bg-white/10 focus-visible:outline-none sm:p-5",
   ].join(" ");
 
-  const contentClassName = ["grid grid-cols-[auto,minmax(0,1fr),auto] items-start", cardGap].join(" ");
-
   const cardBody = (
-    <div className={contentClassName}>
-      <div className="shrink-0 transition-transform duration-200 group-hover:scale-[1.03]">{renderThumbnail()}</div>
+    <div className="flex h-full flex-col gap-4">
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-xs font-semibold tracking-[0.2em] text-white/70 transition-transform duration-200 group-hover:scale-105 sm:h-11 sm:w-11">
+            {accentLabel || "PR"}
+          </div>
 
-      <div className="min-w-0">
-        <h2 className={`truncate font-semibold leading-tight text-white ${titleSize}`}>
-          {project.title}
-        </h2>
-
-        <div className={`mt-1 flex flex-wrap ${compact ? "gap-1" : "gap-1.5 sm:mt-2"}`}>
-          {project.tech.map((t: string, i: number) => (
-            <span
-              key={i}
-              className={`rounded-md border border-gray-700 text-gray-300 ${tagSize}`}
-            >
-              {t}
-            </span>
-          ))}
+          <div className="min-w-0">
+            <h2 className="truncate text-sm font-semibold leading-tight text-white sm:text-base">
+              {project.title}
+            </h2>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-white/45 sm:text-[12px]">
+              Project
+            </p>
+          </div>
         </div>
+
+        <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-white/60 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+          <FiArrowUpRight className="text-xs" />
+        </span>
       </div>
 
-      <span
-        className={`flex items-center justify-center rounded-full border border-gray-700 text-gray-300 transition duration-200 group-hover:-rotate-45 group-hover:border-white group-hover:text-white ${iconSize}`}
-      >
-        <FiArrowUpRight className={compact ? "text-[10px] sm:text-xs" : "text-xs sm:text-sm"} />
-      </span>
+      <p className="line-clamp-2 text-sm leading-6 text-white/70">
+        {project.description}
+      </p>
+
+      <div className="flex flex-wrap gap-2 pt-1">
+        {project.tech.map((tech: string, i: number) => (
+          <span
+            key={i}
+            className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-medium text-white/75"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
     </div>
   );
 
