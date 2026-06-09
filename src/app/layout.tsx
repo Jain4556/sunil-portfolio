@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
+import BackgroundGrid from "@/components/BackgroundGrid";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +33,12 @@ export default function RootLayout({
     >
       <body className="min-h-full transition-colors duration-300">
         <ThemeProvider>
+            <BackgroundGrid/>
           <Navbar />
-          <div className="pt-32">{children}</div>
+          <div className="pt-32">
+            
+            {children}</div>
+        
         </ThemeProvider>
       </body>
     </html>
