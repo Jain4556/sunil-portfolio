@@ -27,6 +27,7 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
+  console.log("Current Theme:", resolvedTheme); 
 
 return (
   <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
