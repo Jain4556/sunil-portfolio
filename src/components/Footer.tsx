@@ -68,7 +68,7 @@ export default function Footer() {
                 aria-label={link.name}
                 className="
                   text-zinc-500
-                  transition-colors
+                  transition-colors 
                   duration-200
                   hover:text-white
                 "

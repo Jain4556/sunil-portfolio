@@ -2,57 +2,41 @@ import Link from "next/link";
 
 export default function Resume() {
   return (
-    <main className="mx-auto max-w-5xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
-      <div className="flex flex-col items-center gap-6 text-center">
-        <div>
-          <p className="text-sm uppercase tracking-[0.3em] text-zinc-500 dark:text-zinc-400">
-            Resume
-          </p>
-
-          <h1 className="mt-4 text-4xl font-semibold tracking-tight text-zinc-950 dark:text-white sm:text-5xl">
-            View and download my resume
-          </h1>
-
-          <p className="mt-5 max-w-2xl text-base leading-7 text-zinc-600 dark:text-zinc-300">
-            My resume is displayed below. Use the download button on the right to
-            save a copy, or open the PDF directly in the browser.
-          </p>
-        </div>
+    <main className="min-h-screen px-4 pt-28 pb-20">
+      <div className="mx-auto max-w-6xl text-center">
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-5xl">
+          Sunil's Resume
+        </h1>
 
         <a
           href="/suniljain.pdf"
           download
-          className="inline-flex w-fit items-center rounded-full bg-zinc-950 px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800 dark:bg-white dark:text-zinc-950 dark:hover:bg-zinc-200"
+          className="mt-6 inline-block text-xl font-medium text-zinc-700 underline underline-offset-8 transition hover:text-zinc-900 dark:text-zinc-300 dark:hover:text-white"
         >
-          Download Resume
+          Download the PDF
         </a>
-      </div>
 
-      <section className="mx-auto mt-10 max-w-4xl overflow-hidden rounded-4xl border border-white/10 bg-white/5 shadow-[0_24px_80px_-48px_rgba(0,0,0,0.55)] backdrop-blur-xl">
-        <div className="border-b border-black/10 px-5 py-4 dark:border-white/10 sm:px-6">
-          <p className="text-sm font-medium text-zinc-600 dark:text-zinc-300">
-            Resume preview
-          </p>
+        {/* Resume Preview */}
+        <div className="mt-10 flex justify-center">
+          <div className="w-full max-w-4xl rounded-xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-md">
+            <div className="mx-auto aspect-[1/1.414] w-full max-w-3xl overflow-hidden rounded-md bg-white shadow-[0_20px_80px_rgba(0,0,0,0.25)]">
+              <iframe
+                src="/suniljain.pdf"
+                title="Resume PDF"
+                className="h-full w-full"
+              />
+            </div>
+          </div>
         </div>
 
-        <div className="h-[80vh] bg-black/15">
-          <iframe
-            src="/suniljain.pdf"
-            title="Resume PDF"
-            className="h-full w-full"
-          />
+        <div className="mt-10">
+          <Link
+            href="/contact"
+            className="inline-flex items-center rounded-full border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-900 transition-all hover:bg-zinc-900 hover:text-white dark:border-white/20 dark:text-white dark:hover:bg-white dark:hover:text-zinc-900"
+          >
+            Contact Me
+          </Link>
         </div>
-      </section>
-
-     
-
-      <div className="mt-8 flex justify-center">
-        <Link
-          href="/contact"
-          className="inline-flex items-center rounded-full border border-zinc-300 px-5 py-3 text-sm font-semibold text-zinc-900 transition hover:-translate-y-0.5 hover:border-zinc-950 hover:bg-zinc-950 hover:text-white dark:border-white/15 dark:text-white dark:hover:border-white dark:hover:bg-white dark:hover:text-zinc-950"
-        >
-          Contact me
-        </Link>
       </div>
     </main>
   );
