@@ -18,12 +18,12 @@ const socialLinks = [
   {
     name: "Email",
     icon: MdEmail,
-    href: "suniljain09005@gmail.com",
+    href: "mailto:suniljain09005@gmail.com",
   },
   {
     name: "Resume",
     icon: FaFileAlt,
-    href: "/resume.pdf",
+    href: "/suniljain.png",
   },
 ];
 
