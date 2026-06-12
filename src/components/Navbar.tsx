@@ -17,9 +17,7 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
-  useEffect(() => {
-  console.log("Theme:", resolvedTheme);
-}, [resolvedTheme]);
+
 
   const links = [
     { href: "/", label: "Home" },
@@ -31,17 +29,17 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href;
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
-  console.log("Current Theme:", resolvedTheme); 
+  
 
 return (
   <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4">
-    <nav className="relative mx-auto flex w-full max-w-3xl items-center justify-between rounded-3xl border border-white/10 bg-white/10 px-4 py-2 backdrop-blur-xl dark:bg-zinc-950/40">
+    <nav className="relative mx-auto flex w-full max-w-3xl items-center justify-between rounded-3xl border border-zinc-200/80 bg-white/80 px-4 py-2 backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/40">
 
       {/* Logo */}
       <Link
         href="/"
         aria-label="Go to home"
-        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-300 bg-white text-sm font-bold text-zinc-900 transition-all duration-300 hover:scale-105 dark:border-zinc-700 dark:bg-zinc-950 dark:text-white"
+        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-zinc-300 bg-white text-sm font-bold text-zinc-900 transition-all duration-300 hover:scale-105 dark:border-zinc-700 dark:bg-zinc-950 text-zinc-900 dark:text-white"
       >
         <span className="font-serif">SJ</span>
       </Link>
@@ -54,8 +52,8 @@ return (
             href={link.href}
             className={`text-sm font-medium transition-colors duration-300 ${
               isActive(link.href)
-                ? "text-zinc-950 dark:text-white"
-                : "text-zinc-600 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                ? "hover:text-zinc-900 dark:hover:text-white"
+                : "text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white"
             }`}
           >
             {link.label}
@@ -89,7 +87,7 @@ return (
         <div className="relative md:hidden">
           <button
             type="button"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/10"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition-all duration-300 hover:bg-zinc-100 dark:border-white/10 dark:bg-white/5 dark:text-zinc-200 dark:hover:bg-white/10"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
             onClick={() => setMobileMenuOpen((open) => !open)}
@@ -98,7 +96,7 @@ return (
           </button>
 
           {mobileMenuOpen && (
-            <div className="absolute right-0 top-full mt-2 w-44 rounded-2xl border border-white/10 bg-white/95 p-2 shadow-lg backdrop-blur-xl dark:bg-zinc-950/95">
+            <div className="absolute right-0 top-full mt-2 w-44 rounded-2xl border border-zinc-200 bg-white p-2 shadow-lg backdrop-blur-xl dark:border-white/10 dark:bg-zinc-950/95">
               <div className="flex flex-col gap-1">
                 {links.map((link) => (
                   <Link
@@ -107,8 +105,8 @@ return (
                     onClick={closeMobileMenu}
                     className={`rounded-xl px-3 py-2 text-sm transition-colors ${
                       isActive(link.href)
-                        ? "bg-zinc-100 text-zinc-950 dark:bg-white/10 dark:text-white"
-                        : "hover:bg-zinc-100 dark:hover:bg-white/10"
+                        ? "bg-zinc-100 text-zinc-950 dark:bg-white/10 text-zinc-900 dark:text-white"
+                        : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-300 dark:hover:bg-white/10"
                     }`}
                   >
                     {link.label}

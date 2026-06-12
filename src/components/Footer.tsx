@@ -29,7 +29,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-[#0A0A0A]">
+    <footer className="relative overflow-hidden border-t border-zinc-200 bg-white dark:border-white/10 dark:bg-[#0A0A0A]">
       {/* Subtle Glow */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-0 h-[250px] w-[250px] -translate-x-1/2 rounded-full bg-white/[0.02] blur-3xl" />
@@ -44,11 +44,11 @@ export default function Footer() {
       >
         {/* Heading */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold text-white md:text-3xl">
+         <h2 className="text-2xl font-semibold text-zinc-900 dark:text-white md:text-3xl">
             Let's Build Something Great Together
           </h2>
 
-          <p className="mt-4 text-sm leading-relaxed text-zinc-500 md:text-base">
+        <p className="mt-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-500 md:text-base">
             I'm open to internships, collaborations, and opportunities
             to build impactful products.
           </p>
@@ -66,12 +66,13 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.name}
-                className="
-                  text-zinc-500
-                  transition-colors 
-                  duration-200
-                  hover:text-white
-                "
+               className="
+  text-zinc-600
+  transition-colors
+  duration-200
+  dark:text-zinc-500
+  hover:text-zinc-900 dark:hover:text-white
+"
               >
                 <Icon size={20} />
               </a>
@@ -80,11 +81,11 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="mx-auto mt-10 max-w-md border-t border-white/10" />
+       <div className="mx-auto mt-10 max-w-md border-t border-zinc-200 dark:border-white/10" />
 
         {/* Bottom */}
         <div className="mt-6 text-center">
-          <p className="text-xs tracking-wide text-zinc-500">
+          <p className="text-xs tracking-wide text-zinc-600 dark:text-zinc-500">
             © 2026 Sunil Jain. All rights reserved.
           </p>
         </div>

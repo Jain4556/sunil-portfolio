@@ -9,7 +9,7 @@ export default function AboutPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.28em] text-amber-400/80 sm:text-sm">
               About Me
             </p>
-            <h1 className="mt-2 text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-2 text-3xl font-bold leading-tight text-zinc-900 dark:text-white sm:text-4xl lg:text-5xl">
               Clean design, clear storytelling, and a focus on building useful software.
             </h1>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-zinc-300 sm:text-base">

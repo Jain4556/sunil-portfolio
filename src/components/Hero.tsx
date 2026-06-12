@@ -94,7 +94,7 @@ export default function Hero() {
 
               <div className="flex-1">
                 <motion.h1 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
-                  Hi, I&apos;m <span className="bg-linear-to-r from-amber-500 to-cyan-600 bg-clip-text text-transparent">Sunil Jain</span>
+                  Hi, I&apos;m <span className="bg-linear-to-r from-zinc-800 via-zinc-950 to-zinc-800 bg-clip-text text-transparent dark:from-zinc-200 dark:via-white dark:to-zinc-300">Sunil Jain</span>
                 </motion.h1>
 
                 <div className="mt-1.5 flex h-7 items-center justify-start overflow-hidden sm:h-8">
@@ -114,21 +114,21 @@ export default function Hero() {
            <div className="mt-10">
               <div className="w-full">
                 <div className="mb-4">
-                  <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">Find me on</p>
+                  <p className="text-sm font-semibold text-zinc-600 dark:text-zinc-400">Find me on</p>
                   <div className="mt-2 flex gap-3">
-                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
+                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
                       <FaLinkedin size={16} />  
                     </a>
-                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
+                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
                       <FaGithub size={16} />
                     </a>
-                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white   hover:scale-105 hover:bg-white hover:text-[#5865F2]">
+                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer"  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
                       <SiDiscord size={16} />
                     </a>
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-white/5">
+                <div className="pt-4 border-t border-zinc-200 dark:border-white/5">
                   <About className="pt-4" />
                 </div>
 
@@ -141,7 +141,7 @@ export default function Hero() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                  className="mt-10 border-t border-white/5 pt-14"
+                 className="mt-10 border-t border-zinc-200 dark:border-white/5 pt-14"
                 >
                   <div className="flex items-end justify-between gap-4">
                     <div>
@@ -151,7 +151,7 @@ export default function Hero() {
                       </h2>
                     </div>
 
-                    <Link href="/projects" className="text-sm text-zinc-500 transition hover:text-zinc-900 dark:hover:text-white">
+                    <Link href="/projects" className="text-sm text-zinc-700 dark:text-zinc-500 transition hover:text-zinc-900 dark:hover:text-white">
                       View all
                     </Link>
                   </div>

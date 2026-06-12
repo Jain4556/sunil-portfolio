@@ -17,7 +17,7 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
   return (
     <div className="container py-20">
-      <Link href="/projects" className="text-sm text-gray-400 transition hover:text-white">
+      <Link href="/projects" className="text-sm text-gray-400 transition text-zinc-900 dark:text-white">
         Back to projects
       </Link>
 

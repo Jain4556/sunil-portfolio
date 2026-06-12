@@ -4,14 +4,14 @@ export default function Resume() {
   return (
     <main className="mx-auto max-w-7xl px-4 pt-10 pb-20">
       <div className="text-center">
-        <h1 className="text-5xl font-bold text-white">
+        <h1 className="text-5xl font-bold text-zinc-900 dark:text-white">
           Sunil's Resume
         </h1>
 
         <a
           href="/suniljain.pdf"
           download
-          className="mt-5 inline-block text-xl font-medium text-zinc-300 underline underline-offset-8 hover:text-white"
+          className="mt-5 inline-block text-xl font-medium underline underline-offset-8 text-zinc-900 dark:text-white"
         >
           Download PDF
         </a>

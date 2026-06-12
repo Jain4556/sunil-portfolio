@@ -49,7 +49,7 @@ export default function TechStack() {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        className="text-2xl font-bold sm:text-3xl"
+        className="text-2xl font-bold text-zinc-900 dark:text-white sm:text-3xl"
       >
         Tech Stack
       </motion.h2>
@@ -67,12 +67,12 @@ export default function TechStack() {
             className="group flex w-14 flex-col items-center sm:w-16"
           >
             {/* ICON */}
-            <div className="text-3xl text-gray-400 transition duration-300 group-hover:text-white sm:text-4xl">
+            <div className="text-3xl text-zinc-700 transition duration-300 group-hover:text-zinc-900 dark:text-zinc-400 dark:group-hover:text-white sm:text-4xl">
               {item.icon}
             </div>
 
             {/* LABEL */}
-            <span className="mt-2 text-[10px] leading-none text-gray-500 sm:text-xs">
+        <span className="mt-2 text-[10px] leading-none text-zinc-700 dark:text-zinc-500 sm:text-xs">
               {item.name}
             </span>
           </motion.div>

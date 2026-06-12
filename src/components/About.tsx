@@ -15,7 +15,7 @@ const aboutItems = [
 export default function About({ className = "" }: { className?: string }) {
   return (
     <section className={`w-full ${className}`}>
-      <h2 className="text-3xl font-bold text-zinc-100">
+      <h2 className="text-3xl font-bold text-zinc-900 dark:text-zinc-100">
         About
       </h2>
 
@@ -31,11 +31,11 @@ export default function About({ className = "" }: { className?: string }) {
           lg:gap-y-8
         "
       >
-        {aboutItems.map((item, index) => (
+        {aboutItems.map((item, index)   => (
           <div key={index} className="flex gap-3">
-            <div className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-500" />
+        <div className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-zinc-600 dark:bg-zinc-500" />
 
-            <p className="text-[15px] leading-8 text-zinc-300">
+            <p className="text-[15px] leading-8 text-zinc-800 dark:text-zinc-300">
               {item}
             </p>
           </div>
