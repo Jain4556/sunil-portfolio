@@ -17,6 +17,10 @@ export default function Navbar() {
     setMounted(true);
   }, []);
 
+  useEffect(() => {
+  console.log("Theme:", resolvedTheme);
+}, [resolvedTheme]);
+
   const links = [
     { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },

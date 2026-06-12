@@ -28,8 +28,13 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
     .join("");
 
   const cardClassName = [
-    "group block h-full rounded-2xl border border-white/10 bg-white/5 p-4 shadow-[0_16px_40px_-28px_rgba(0,0,0,0.45)] backdrop-blur-sm transition duration-200 hover:border-white/20 hover:bg-white/10 focus-visible:outline-none sm:p-5",
-  ].join(" ");
+  "group block h-full min-h-[240px] rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md",
+  "shadow-[0_20px_50px_rgba(0,0,0,0.35)]",
+  "transition-all duration-300",
+  "hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07]",
+  "focus-visible:outline-none",
+].join(" ");
+
 
   const cardBody = (
     <div className="flex h-full flex-col gap-4">
@@ -54,9 +59,9 @@ export default function ProjectCard({ project, compact = false }: ProjectCardPro
         </span>
       </div>
 
-      <p className="line-clamp-2 text-sm leading-6 text-white/70">
-        {project.description}
-      </p>
+    <p className="line-clamp-3 text-sm leading-7 text-white/70">
+  {project.description}
+</p>
 
       <div className="flex flex-wrap gap-2 pt-1">
         {project.tech.map((tech: string, i: number) => (

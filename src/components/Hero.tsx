@@ -116,13 +116,13 @@ export default function Hero() {
                 <div className="mb-4">
                   <p className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">Find me on</p>
                   <div className="mt-2 flex gap-3">
-                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
+                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white hover:scale-105 hover:bg-white hover:text-[#0A66C2]">
                       <FaLinkedin size={16} />  
                     </a>
-                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
+                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white hover:scale-105 hover:bg-white hover:text-[#181717]">
                       <FaGithub size={16} />
                     </a>
-                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-105 hover:bg-white hover:text-[#5865F2]">
+                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white   hover:scale-105 hover:bg-white hover:text-[#5865F2]">
                       <SiDiscord size={16} />
                     </a>
                   </div>
