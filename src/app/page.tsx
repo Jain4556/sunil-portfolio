@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="space-y-32">
       <Hero />
-      <Footer/>
+     
     </main>
   );
 } 

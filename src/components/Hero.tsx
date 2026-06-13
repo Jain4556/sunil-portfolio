@@ -8,7 +8,7 @@ import About from "./About";
 import TechStack from "./TechStack";
 import ProjectCard from "./ProjectCard";
 import { projects } from "@/data/projects";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa";
 import { SiDiscord } from "react-icons/si";
 
 const heroPhrases = [
@@ -111,19 +111,20 @@ export default function Hero() {
               </div>
             </div>
 
-           <div className="mt-10">
+            <div className="mt-10">
               <div className="w-full">
                 <div className="mb-4">
                   <p className="text-sm font-semibold text-zinc-600 dark:text-zinc-400">Find me on</p>
                   <div className="mt-2 flex gap-3">
-                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
-                      <FaLinkedin size={16} />  
+                    <a href="https://www.linkedin.com/in/sunil-jain-1308a12a9/" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition-all duration-200 hover:scale-105 hover:bg-zinc-100  dark:border-white/10 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800 hover:text-[#0A66C2]">
+                      <FaLinkedin size={16} />
                     </a>
-                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
+                    <a href="https://github.com/Jain4556" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition-all duration-200 hover:scale-105 hover:bg-zinc-100  dark:border-white/10 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800 hover:text-black dark:hover:text-white
+">
                       <FaGithub size={16} />
                     </a>
-                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer"  className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-900 text-zinc-900 dark:text-white transition-all hover:scale-105 dark:bg-zinc-900">
-                      <SiDiscord size={16} />
+                    <a href="https://discord.com/users/your-id" target="_blank" rel="noreferrer" className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-zinc-200 bg-white text-zinc-700 transition-all duration-200 hover:scale-105 hover:bg-zinc-100 dark:border-white/10 dark:bg-zinc-900 dark:text-white dark:hover:bg-zinc-800 hover:text-[#5865F2]">
+                    <FaDiscord size={16} />
                     </a>
                   </div>
                 </div>
@@ -141,17 +142,20 @@ export default function Hero() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.5, ease: "easeOut" }}
-                 className="mt-10 border-t border-zinc-200 dark:border-white/5 pt-14"
+                  className="mt-10 border-t border-zinc-200 dark:border-white/5 pt-14"
                 >
                   <div className="flex items-end justify-between gap-4">
                     <div>
-                     
-                      <h2 className="mt-2 text-2xl font-bold sm:text-3xl">
+
+                      <h2 className="mt-2 text-2xl font-bold text-zinc-900 dark:text-white sm:text-3xl">
                         Projects
                       </h2>
                     </div>
 
-                    <Link href="/projects" className="text-sm text-zinc-700 dark:text-zinc-500 transition hover:text-zinc-900 dark:hover:text-white">
+                    <Link
+                      href="/projects"
+                      className="text-sm font-medium text-zinc-700 transition-colors duration-200 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                    >
                       View all
                     </Link>
                   </div>

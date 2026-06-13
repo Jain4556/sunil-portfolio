@@ -28,7 +28,7 @@ export default function Resume() {
             className="rounded-lg bg-white shadow-2xl"
           />
         </div>
-      </div>
+      </div>    
     </main>
   );
 } 
