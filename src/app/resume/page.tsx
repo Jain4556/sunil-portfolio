@@ -9,7 +9,7 @@ export default function Resume() {
         </h1>
 
         <a
-          href="/suniljain.pdf"
+          href="/suniljain.pdf" 
           download
           className="mt-5 inline-block text-xl font-medium underline underline-offset-8 text-zinc-900 dark:text-white"
         >
